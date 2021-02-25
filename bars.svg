@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="12" viewBox="0 0 20 12">
+    <defs>
+        <style>
+            .cls-1{fill:#021324}
+        </style>
+    </defs>
+    <path id="bars" d="M3 8h18a1 1 0 0 0 0-2H3a1 1 0 0 0 0 2zm18 8H6a1 1 0 0 0 0 2h15a1 1 0 0 0 0-2zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2z" class="cls-1" transform="translate(-2 -6)"/>
+</svg>
