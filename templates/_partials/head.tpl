@@ -46,6 +46,10 @@
   {/block}
 {/block}
 
+<!-- Google font -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;800&display=swap" rel="stylesheet">
+
 {block name='head_viewport'}
   <meta name="viewport" content="width=device-width, initial-scale=1">
 {/block}
@@ -55,9 +59,15 @@
   <link rel="shortcut icon" type="image/x-icon" href="{$shop.favicon}?{$shop.favicon_update_time}">
 {/block}
 
+<link rel="stylesheet" type="text/css" href="https://www.gsmplus.sk/themes/markas/assets/css/bootstrap.min.css">
+
 {block name='stylesheets'}
   {include file="_partials/stylesheets.tpl" stylesheets=$stylesheets}
 {/block}
+
+<!-- Carousel styles -->
+<link rel="stylesheet" href="https://gsmplus.sk/themes/markas/assets/css/owl.carousel.min.css" />
+<link rel="stylesheet" href="https://gsmplus.sk/themes/markas/assets/css/owl.theme.default.min.css" />
 
 {block name='javascript_head'}
   {include file="_partials/javascript.tpl" javascript=$javascript.head vars=$js_custom_vars}

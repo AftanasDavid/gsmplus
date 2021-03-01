@@ -26,7 +26,6 @@
 <script type="text/javascript" src="https://www.gsmplus.sk/modules/posmegamenu/js/mobile_menu.js" ></script>
 <script type="text/javascript" src="https://www.gsmplus.sk/modules/posmegamenu/js/custommenu.js" ></script>
 
-<link rel="stylesheet" type="text/css" href="https://www.gsmplus.sk/themes/markas/assets/css/bootstrap.min.css">
 {block name='header_banner'}
   <div class="header-banner">
     {hook h='displayBanner'}
@@ -38,19 +37,14 @@
     <div class="container">
       <div class="row">
         <div class="hidden-sm-down w-100">
-          <div class="col-md-5 col-xs-12">
+          <div class="col-md-5 col-xs-12 h-100 d-flex align-items-center">
             {hook h='displayNav1'}
           </div>
           <div class="col-md-7 right-nav">
               {hook h='displayNav2'}
           </div>
         </div>
-        <div class="hidden-md-up text-sm-center mobile">
-          <div class="float-xs-left" id="menu-icon">
-            <i class="material-icons d-inline">&#xE5D2;</i>
-          </div>
-          <div class="float-xs-right" id="_mobile_cart"></div>
-          <div class="float-xs-right" id="_mobile_user_info"></div>
+        <div class="hidden-md-up w-100 text-center mobile">
           <div class="top-logo" id="_mobile_logo"></div>
           <div class="clearfix"></div>
         </div>
@@ -62,32 +56,28 @@
 {block name='header_top'}
   <div class="header-top">
     <div class="container-fluid">
-      <div class="container">
+      <div class="container pt-2 pb-2">
         <div class="row">
           <div class="col-md-2 hidden-sm-down" id="_desktop_logo">
               {if $page.page_name == 'index'}
-                <h1>
                   <a href="{$urls.base_url}">
                     <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}">
                   </a>
-                </h1>
               {else}
                   <a href="{$urls.base_url}">
                     <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}">
                   </a>
               {/if}
           </div>
-          <div class="col-md-10 col-sm-12 position-static">
+          <div class="col-md-10 col-sm-12 position-static d-flex align-items-center justify-content-center">
             {hook h='displaySearch'}
             <div class="clearfix"></div>
           </div>
         </div>
       </div>
-      <div style="border-top: 1px solid #EBEBEB;" class="row m-0 p-1">
+      <div style="border-top: 1px solid #EBEBEB;" class="row m-0">
         <div class="col-md-12 col-sm-12 text-center">
-          <div class="container">
           {hook h='displayMegamenu'}
-          </div>
         </div>
       </div>
 

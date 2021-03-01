@@ -41,13 +41,13 @@
         {hook h='displayFooterAfter'}
       {/block}
     </div>
-    <div class="row">
+    <div class="row mt-3 pb-5 pb-sm-0">
       <div class="col-md-12">
-        <p class="text-sm-center">
+        <p class="text-center">
           {block name='copyright_link'}
-            <a class="_blank" href="https://www.prestashop.com" target="_blank" rel="nofollow">
-              {l s='%copyright% %year% - Ecommerce software by %prestashop%' sprintf=['%prestashop%' => 'PrestaShop™', '%year%' => 'Y'|date, '%copyright%' => '©'] d='Shop.Theme.Global'}
-            </a>
+              {l s='%copyright% %year% - gsmplus.sk. Všetky práva vyhradené.' sprintf=['%prestashop%' => 'PrestaShop™', '%year%' => 'Y'|date, '%copyright%' => '©'] d='Shop.Theme.Global'}
+              <br>
+              {l s='Vytvorené spoločnosťou' d='Shop.Theme.Global'} <a href="https://nakodime.sk/">nakodime.sk</a>
           {/block}
         </p>
       </div>

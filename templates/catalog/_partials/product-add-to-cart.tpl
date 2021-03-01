@@ -24,7 +24,7 @@
  *}
 <div class="product-add-to-cart">
   {if !$configuration.is_catalog}
-    <span class="control-label">{l s='Quantity' d='Shop.Theme.Catalog'}</span>
+    <span class="control-label"><h6>{l s='Quantity' d='Shop.Theme.Catalog'}</h6></span>
 
     {block name='product_quantity'}
       <div class="product-quantity clearfix">
@@ -49,7 +49,7 @@
               disabled
             {/if}
           >
-            <i class="material-icons shopping-cart">&#xE547;</i>
+            <i class="fas fa-shopping-cart" aria-hidden="true"></i>
             {l s='Add to cart' d='Shop.Theme.Actions'}
           </button>
         </div>

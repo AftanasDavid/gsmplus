@@ -23,15 +23,36 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {extends file='page.tpl'}
-
     {block name='page_content_container'}
       <section id="content" class="page-home">
         {block name='page_content_top'}{/block}
-
         {block name='page_content'}
           {block name='hook_home'}
             {$HOOK_HOME nofilter}
           {/block}
+          <div id="carousel-brands">
+            <div class="owl-carousel">
+              <div>
+                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/sample.png" alt="Partneri" /></a>
+              </div>
+              <div>
+                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/sample.png" alt="Partneri" /></a>
+              </div>
+              <div>
+                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/sample.png" alt="Partneri" /></a>
+              </div>
+              <div>
+                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/sample.png" alt="Partneri" /></a>
+              </div>
+              <div>
+                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/sample.png" alt="Partneri" /></a>
+              </div>
+              <div>
+                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/sample.png" alt="Partneri" /></a>
+              </div>
+            </div>
+          </div>
+          {hook h='displayHomeTab'}
         {/block}
       </section>
     {/block}

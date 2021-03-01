@@ -23,147 +23,150 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {block name='product_miniature_item'}
-<div itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-  {if isset($position)}<meta itemprop="position" content="{$position}" />{/if}
-  <article class="product-miniature js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemprop="item" itemscope itemtype="http://schema.org/Product">
-    <div class="row m-0">
-      <div class="col-12 text-center">
-        {if $product.cover}
-          <a href="{$product.url}" class="thumbnail product-thumbnail">
-            <img
-              style="width: 90%;"
-              src="{$product.cover.bySize.home_default.url}"
-              alt="{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
-              data-full-size-image-url="{$product.cover.large.url}"
-              />
-          </a>
-        {else}
-          <a href="{$product.url}" class="thumbnail product-thumbnail">
-            <img src="{$urls.no_picture_image.bySize.home_default.url}" />
-          </a>
-        {/if}
-      </div>
-      <div class="col-12">
-        {block name='product_name'}
-          {if $page.page_name == 'index'}
-            <h3 class="h3 product-title" itemprop="name"><a href="{$product.url}" itemprop="url" content="{$product.url}">{$product.name}</a></h3>
+<div class="col-6 col-md-4 col-lg-3 product-min" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+  <div class="product-thumb">
+    {if isset($position)}<meta itemprop="position" content="{$position}" />{/if}
+    <article class="product-miniature js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemprop="item" itemscope itemtype="http://schema.org/Product">
+      <div class="row m-0">
+        <div class="col-12 text-center p-0">
+          {if $product.cover}
+            <a href="{$product.url}" class="thumbnail product-thumbnail">
+              <img
+                class="p-2"
+                src="{$product.cover.bySize.home_default.url}"
+                alt="{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
+                data-full-size-image-url="{$product.cover.large.url}"
+                />
+            </a>
           {else}
-            <h2 class="h3 product-title" itemprop="name"><a href="{$product.url}" itemprop="url" content="{$product.url}">{$product.name}</a></h2>
+            <a href="{$product.url}" class="thumbnail product-thumbnail">
+              <img src="{$urls.no_picture_image.bySize.home_default.url}" />
+            </a>
           {/if}
-        {/block}
-      </div>
-      <div class="col-12 mb-2">
-        {block name='product_price_and_shipping'}
-          {if $product.show_price}
-            <div class="product-price-and-shipping">
-              {if $product.has_discount}
-                {hook h='displayProductPriceBlock' product=$product type="old_price"}
+        </div>
+        <div class="col-12 p-0">
+          {block name='product_name'}
+            {if $page.page_name == 'index'}
+              <h3 class="h3 product-title" itemprop="name"><a href="{$product.url}" itemprop="url" content="{$product.url}">{$product.name}</a></h3>
+            {else}
+              <h2 class="h3 product-title" itemprop="name"><a href="{$product.url}" itemprop="url" content="{$product.url}">{$product.name}</a></h2>
+            {/if}
+          {/block}
+        </div>
+        <span class="nice-hr"></span>
+        <div class="col-12 mb-2 p-0">
+          {block name='product_price_and_shipping'}
+            {if $product.show_price}
+              <div class="product-price-and-shipping">
+                {if $product.has_discount}
+                  {hook h='displayProductPriceBlock' product=$product type="old_price"}
 
-                <span class="regular-price" aria-label="{l s='Regular price' d='Shop.Theme.Catalog'}">{$product.regular_price}</span>
-                {if $product.discount_type === 'percentage'}
-                  <span class="discount-percentage discount-product">{$product.discount_percentage}</span>
-                {elseif $product.discount_type === 'amount'}
-                  <span class="discount-amount discount-product">{$product.discount_amount_to_display}</span>
+                  <span class="regular-price" aria-label="{l s='Regular price' d='Shop.Theme.Catalog'}">{$product.regular_price}</span>
+                  {if $product.discount_type === 'percentage'}
+                    <span class="discount-percentage discount-product">{$product.discount_percentage}</span>
+                  {elseif $product.discount_type === 'amount'}
+                    <span class="discount-amount discount-product">{$product.discount_amount_to_display}</span>
+                  {/if}
                 {/if}
-              {/if}
 
-              {hook h='displayProductPriceBlock' product=$product type="before_price"}
+                {hook h='displayProductPriceBlock' product=$product type="before_price"}
 
-              <span class="price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">{$product.price}</span>
-              <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="invisible">
-                <meta itemprop="priceCurrency" content="{$currency.iso_code}" />
-                <meta itemprop="price" content="{$product.price_amount}" />
+                <span class="price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">{$product.price}</span>
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="invisible">
+                  <meta itemprop="priceCurrency" content="{$currency.iso_code}" />
+                  <meta itemprop="price" content="{$product.price_amount}" />
+                </div>
+
+                {hook h='displayProductPriceBlock' product=$product type='unit_price'}
+
+                {hook h='displayProductPriceBlock' product=$product type='weight'}
               </div>
-
-              {hook h='displayProductPriceBlock' product=$product type='unit_price'}
-
-              {hook h='displayProductPriceBlock' product=$product type='weight'}
-            </div>
-          {/if}
-        {/block}
+            {/if}
+          {/block}
+        </div>
+     
       </div>
-   
-    </div>
 
-<!--     <div class="thumbnail-container">
-      {block name='product_thumbnail'}
-        {if $product.cover}
-          <a href="{$product.url}" class="thumbnail product-thumbnail">
-            <img
-              src="{$product.cover.bySize.home_default.url}"
-              alt="{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
-              data-full-size-image-url="{$product.cover.large.url}"
-              />
-          </a>
-        {else}
-          <a href="{$product.url}" class="thumbnail product-thumbnail">
-            <img src="{$urls.no_picture_image.bySize.home_default.url}" />
-          </a>
-        {/if}
-      {/block}
-
-      <div class="product-description">
-        {block name='product_name'}
-          {if $page.page_name == 'index'}
-            <h3 class="h3 product-title" itemprop="name"><a href="{$product.url}" itemprop="url" content="{$product.url}">{$product.name|truncate:30:'...'}</a></h3>
+  <!--     <div class="thumbnail-container">
+        {block name='product_thumbnail'}
+          {if $product.cover}
+            <a href="{$product.url}" class="thumbnail product-thumbnail">
+              <img
+                src="{$product.cover.bySize.home_default.url}"
+                alt="{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
+                data-full-size-image-url="{$product.cover.large.url}"
+                />
+            </a>
           {else}
-            <h2 class="h3 product-title" itemprop="name"><a href="{$product.url}" itemprop="url" content="{$product.url}">{$product.name|truncate:30:'...'}</a></h2>
+            <a href="{$product.url}" class="thumbnail product-thumbnail">
+              <img src="{$urls.no_picture_image.bySize.home_default.url}" />
+            </a>
           {/if}
         {/block}
 
-        {block name='product_price_and_shipping'}
-          {if $product.show_price}
-            <div class="product-price-and-shipping">
-              {if $product.has_discount}
-                {hook h='displayProductPriceBlock' product=$product type="old_price"}
+        <div class="product-description">
+          {block name='product_name'}
+            {if $page.page_name == 'index'}
+              <h3 class="h3 product-title" itemprop="name"><a href="{$product.url}" itemprop="url" content="{$product.url}">{$product.name|truncate:30:'...'}</a></h3>
+            {else}
+              <h2 class="h3 product-title" itemprop="name"><a href="{$product.url}" itemprop="url" content="{$product.url}">{$product.name|truncate:30:'...'}</a></h2>
+            {/if}
+          {/block}
 
-                <span class="regular-price" aria-label="{l s='Regular price' d='Shop.Theme.Catalog'}">{$product.regular_price}</span>
-                {if $product.discount_type === 'percentage'}
-                  <span class="discount-percentage discount-product">{$product.discount_percentage}</span>
-                {elseif $product.discount_type === 'amount'}
-                  <span class="discount-amount discount-product">{$product.discount_amount_to_display}</span>
+          {block name='product_price_and_shipping'}
+            {if $product.show_price}
+              <div class="product-price-and-shipping">
+                {if $product.has_discount}
+                  {hook h='displayProductPriceBlock' product=$product type="old_price"}
+
+                  <span class="regular-price" aria-label="{l s='Regular price' d='Shop.Theme.Catalog'}">{$product.regular_price}</span>
+                  {if $product.discount_type === 'percentage'}
+                    <span class="discount-percentage discount-product">{$product.discount_percentage}</span>
+                  {elseif $product.discount_type === 'amount'}
+                    <span class="discount-amount discount-product">{$product.discount_amount_to_display}</span>
+                  {/if}
                 {/if}
-              {/if}
 
-              {hook h='displayProductPriceBlock' product=$product type="before_price"}
+                {hook h='displayProductPriceBlock' product=$product type="before_price"}
 
-              <span class="price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">{$product.price}</span>
-              <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="invisible">
-                <meta itemprop="priceCurrency" content="{$currency.iso_code}" />
-                <meta itemprop="price" content="{$product.price_amount}" />
+                <span class="price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">{$product.price}</span>
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="invisible">
+                  <meta itemprop="priceCurrency" content="{$currency.iso_code}" />
+                  <meta itemprop="price" content="{$product.price_amount}" />
+                </div>
+
+                {hook h='displayProductPriceBlock' product=$product type='unit_price'}
+
+                {hook h='displayProductPriceBlock' product=$product type='weight'}
               </div>
+            {/if}
+          {/block}
 
-              {hook h='displayProductPriceBlock' product=$product type='unit_price'}
+          {block name='product_reviews'}
+            {hook h='displayProductListReviews' product=$product}
+          {/block}
+        </div>
 
-              {hook h='displayProductPriceBlock' product=$product type='weight'}
-            </div>
-          {/if}
-        {/block}
+        {include file='catalog/_partials/product-flags.tpl'}
 
-        {block name='product_reviews'}
-          {hook h='displayProductListReviews' product=$product}
-        {/block}
-      </div>
+        <div class="highlighted-informations{if !$product.main_variants} no-variants{/if} hidden-sm-down">
+          {block name='quick_view'}
+            <a class="quick-view" href="#" data-link-action="quickview">
+              <i class="material-icons search">&#xE8B6;</i> {l s='Quick view' d='Shop.Theme.Actions'}
+            </a>
+          {/block}
 
-      {include file='catalog/_partials/product-flags.tpl'}
-
-      <div class="highlighted-informations{if !$product.main_variants} no-variants{/if} hidden-sm-down">
-        {block name='quick_view'}
-          <a class="quick-view" href="#" data-link-action="quickview">
-            <i class="material-icons search">&#xE8B6;</i> {l s='Quick view' d='Shop.Theme.Actions'}
-          </a>
-        {/block}
-
-        {block name='product_variants'}
-          {if $product.main_variants}
-            {include file='catalog/_partials/variant-links.tpl' variants=$product.main_variants}
-          {/if}
-        {/block}
-      </div>
-    </div> -->
+          {block name='product_variants'}
+            {if $product.main_variants}
+              {include file='catalog/_partials/variant-links.tpl' variants=$product.main_variants}
+            {/if}
+          {/block}
+        </div>
+      </div> -->
 
 
 
-  </article>
+    </article>
+  </div>
 </div>
 {/block}

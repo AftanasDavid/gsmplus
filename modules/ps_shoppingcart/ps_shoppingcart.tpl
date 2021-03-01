@@ -22,13 +22,13 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<div id="_desktop_cart">
+<div id="_desktop_cart" class="d-flex align-items-center justify-content-center">
   <div class="blockcart cart-preview {if $cart.products_count > 0}active{else}inactive{/if}" data-refresh-url="{$refresh_url}">
     <div class="header">
       {if $cart.products_count > 0}
         <a rel="nofollow" href="{$cart_url}">
       {/if}
-        <i class="material-icons shopping-cart">shopping_cart</i>
+        <i class="fas fa-shopping-cart"></i>
         <span class="hidden-sm-down">{l s='Cart' d='Shop.Theme.Checkout'}</span>
         <span class="cart-products-count">({$cart.products_count})</span>
       {if $cart.products_count > 0}

@@ -25,12 +25,11 @@
 
 <div class="block-contact col-md-3 links wrapper">
   <div class="hidden-sm-down">
-    <p class="h4 text-uppercase block-contact-title">{l s='Store information' d='Shop.Theme.Global'}</p>
-      {$contact_infos.address.formatted nofilter}
+    <p class="h3">{l s='Rýchly kontakt' d='Shop.Theme.Global'}</p>
+      {*{$contact_infos.address.formatted nofilter}*}
       {if $contact_infos.phone}
         <br>
-        {* [1][/1] is for a HTML tag. *}
-        {l s='Call us: [1]%phone%[/1]'
+        {l s='%phone%'
           sprintf=[
           '[1]' => '<span>',
           '[/1]' => '</span>',
@@ -39,24 +38,14 @@
           d='Shop.Theme.Global'
         }
       {/if}
-      {if $contact_infos.fax}
-        <br>
-        {* [1][/1] is for a HTML tag. *}
-        {l
-          s='Fax: [1]%fax%[/1]'
-          sprintf=[
-            '[1]' => '<span>',
-            '[/1]' => '</span>',
-            '%fax%' => $contact_infos.fax
-          ]
-          d='Shop.Theme.Global'
-        }
-      {/if}
+      <br>
+      <span>Plavnica 217</span>
+      <br>
+      <span>065 45, Plavnica</span>
       {if $contact_infos.email && $display_email}
         <br>
-        {* [1][/1] is for a HTML tag. *}
         {l
-          s='Email us: [1]%email%[/1]'
+          s='[1]%email%[/1]'
           sprintf=[
             '[1]' => '<a href="mailto:'|cat:$contact_infos.email|cat:'" class="dropdown">',
             '[/1]' => '</a>',

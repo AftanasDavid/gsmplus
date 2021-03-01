@@ -26,12 +26,12 @@
     {if $listing.pagination.items_shown_from == 1}
         <div class="block-category card card-block">
             <h1 class="h1">{$category.name}</h1>
-            <div class="block-category-inner">
+            <div class="row block-category-inner">
                 {if $category.description}
-                    <div id="category-description" class="text-muted">{$category.description nofilter}</div>
+                    <div id="category-description" class="col-12 col-md-9 col-lg-10 text-muted d-flex align-items-center">{$category.description nofilter}</div>
                 {/if}
                 {if $category.image.large.url}
-                    <div class="category-cover">
+                    <div class="category-cover col-12 col-md-3 col-lg-2 text-center">
                         <img src="{$category.image.large.url}" alt="{if !empty($category.image.legend)}{$category.image.legend}{else}{$category.name}{/if}">
                     </div>
                 {/if}

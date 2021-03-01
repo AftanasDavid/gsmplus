@@ -22,14 +22,22 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
+<h1 class="text-center">{l s='Gsmplus - všetko pre vás mobil a počítač' d='Shop.Theme.Catalog'}</h1>
 
-<section class="featured-products clearfix mt-3">
-  <h2 class="h2 products-section-title text-uppercase">
-    {l s='New products' d='Shop.Theme.Catalog'}
-  </h2>
+<section class="featured-products clearfix mt-3 container">
+  <div class="row m-0">
+	<div class="col-12 col-md-6">
+		<h2 class="h2 home-h text-uppercase">
+	    	{l s='New products' d='Shop.Theme.Catalog'}
+	  	</h2>
+	</div>	
+	<div class="col-12 col-md-6">
+		<a class="all-product-link float-xs-left float-md-right h4" href="{$allNewProductsLink}">
+		    {l s='All new products' d='Shop.Theme.Catalog'}<i class="material-icons">&#xE315;</i>
+		</a>
+	</div>	
+  </div>
+  
   {include file="catalog/_partials/productlist.tpl" products=$products}
-  <a class="all-product-link float-xs-left float-md-right h4" href="{$allNewProductsLink}">
-    {l s='All new products' d='Shop.Theme.Catalog'}<i class="material-icons">&#xE315;</i>
-  </a>
 </section>
 

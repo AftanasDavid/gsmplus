@@ -22,7 +22,7 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<div id="_desktop_user_info">
+<div id="_desktop_user_info" class="d-flex align-items-center justify-content-center">
   <div class="user-info">
     {if $logged}
       <a
@@ -30,7 +30,7 @@
         href="{$logout_url}"
         rel="nofollow"
       >
-        <i class="material-icons">&#xE7FF;</i>
+        <i class="far fa-user"></i>
         {l s='Sign out' d='Shop.Theme.Actions'}
       </a>
       <a
@@ -48,7 +48,7 @@
         title="{l s='Log in to your customer account' d='Shop.Theme.Customeraccount'}"
         rel="nofollow"
       >
-        <i class="material-icons">&#xE7FF;</i>
+        <i class="far fa-user"></i>
         <span class="hidden-sm-down"></span>
       </a>
     {/if}

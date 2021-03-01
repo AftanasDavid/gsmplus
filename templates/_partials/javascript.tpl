@@ -42,3 +42,35 @@
 
 <!-- FontAwesome -->
 <script src="https://kit.fontawesome.com/df8509d0ba.js"></script>
+
+<!-- Jquery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+<!-- Carousel script -->
+<script src="https://gsmplus.sk/themes/markas/assets/js/owl.carousel.min.js"></script>
+<script>
+  $(".owl-carousel").owlCarousel({
+      loop: true,
+      margin: 10,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      autoplayHoverPause: true,
+      responsiveClass: true,
+      dots: false,
+      smartSpeed: 1000,
+      responsive: {
+          0: {
+              items: 2,
+              loop: true,
+          },
+          600: {
+              items: 4,
+              loop: true,
+          },
+          1000: {
+              items: 6,
+              loop: true,
+          },
+      },
+  });
+</script>
