@@ -24,40 +24,51 @@
  *}
 
 <div class="block-contact col-md-3 links wrapper">
-  <div class="hidden-sm-down">
+  <div>
     <p class="h3">{l s='Rýchly kontakt' d='Shop.Theme.Global'}</p>
       {*{$contact_infos.address.formatted nofilter}*}
       {if $contact_infos.phone}
-        <br>
+        <p>
         {l s='%phone%'
           sprintf=[
-          '[1]' => '<span>',
-          '[/1]' => '</span>',
+          '[1]' => '<p>',
+          '[/1]' => '</p>',
           '%phone%' => $contact_infos.phone
           ]
           d='Shop.Theme.Global'
         }
+      </p>
       {/if}
-      <br>
-      <span>Plavnica 217</span>
-      <br>
-      <span>065 45, Plavnica</span>
+      <p>Plavnica 217</p>
+      <p>065 45, Plavnica</p>
       {if $contact_infos.email && $display_email}
-        <br>
         {l
           s='[1]%email%[/1]'
           sprintf=[
-            '[1]' => '<a href="mailto:'|cat:$contact_infos.email|cat:'" class="dropdown">',
-            '[/1]' => '</a>',
+            '[1]' => '<p><a href="mailto:'|cat:$contact_infos.email|cat:'" class="dropdown">',
+            '[/1]' => '</a></p>',
             '%email%' => $contact_infos.email
           ]
           d='Shop.Theme.Global'
         }
       {/if}
   </div>
-  <div class="hidden-md-up">
+  {*<div class="hidden-md-up">
     <div class="title">
       <a class="h3" href="{$urls.pages.stores}">{l s='Store information' d='Shop.Theme.Global'}</a>
     </div>
+  </div>*}
+</div>
+<div class="block-contact col-md-3 socials wrapper">
+  <p class="h3">{l s='Sociálne siete' d='Shop.Theme.Global'}</p>
+  <ul class="text-center text-md-left">
+    <li><a href="#"><img width="45" src="https://gsmplus.sk/themes/markas/assets/img/footer/fb.png" alt=""></a></li>
+    <li><a href="#"><img width="45" src="https://gsmplus.sk/themes/markas/assets/img/footer/insta.png" alt=""></a></li>
+    <li><a href="#"><img width="45" src="https://gsmplus.sk/themes/markas/assets/img/footer/yt.png" alt=""></a></li>
+  </ul>
+  <div class="text-center text-md-left">
+    <img class="mt-2 w-75" src="https://gsmplus.sk/themes/markas/assets/img/footer/zasielkovna.png" alt="">
+    <br>
+    <img class="mt-2 w-75" src="https://gsmplus.sk/themes/markas/assets/img/footer/karty.png" alt="">
   </div>
 </div>

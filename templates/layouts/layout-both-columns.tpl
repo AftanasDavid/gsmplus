@@ -22,6 +22,7 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
+
 <!doctype html>
 <html lang="{$language.iso_code}">
 
@@ -54,11 +55,15 @@
 
       <section id="wrapper">
         {hook h="displayWrapperTop"}
+        {if $page.page_name == 'product' || $page.page_name == 'index'}
         <div class="container-fluid p-0">
+        {else}
+        <div class="container p-0">
+        {/if}
           {if $page.page_name == 'product'}
           <div id="customers" class="mb-2">
             <div class="container">
-              <p>Tento týždeň si produkt zakúpilo 12 zákazníkov.</p>
+              <p>Tento týždeň si produkt zakúpilo {5|rand:17} zákazníkov.</p>
             </div>
           </div>
           {/if}
@@ -97,6 +102,13 @@
     {block name='hook_before_body_closing_tag'}
       {hook h='displayBeforeBodyClosingTag'}
     {/block}
+
+    <script>
+      function() {
+        var number = Math.floor(Math.random() * 17) + 5;
+        $('#numbercust').val(number);
+      }
+    </script>
   </body>
 
 </html>

@@ -43,7 +43,7 @@
     </div>
     <div class="row mt-3 pb-5 pb-sm-0">
       <div class="col-md-12">
-        <p class="text-center">
+        <p class="text-center copyright">
           {block name='copyright_link'}
               {l s='%copyright% %year% - gsmplus.sk. Všetky práva vyhradené.' sprintf=['%prestashop%' => 'PrestaShop™', '%year%' => 'Y'|date, '%copyright%' => '©'] d='Shop.Theme.Global'}
               <br>

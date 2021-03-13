@@ -56,7 +56,7 @@
 {block name='header_top'}
   <div class="header-top">
     <div class="container-fluid">
-      <div class="container pt-2 pb-2">
+      <div id="hide-search" class="container pt-2 pb-2">
         <div class="row">
           <div class="col-md-2 hidden-sm-down" id="_desktop_logo">
               {if $page.page_name == 'index'}
@@ -69,7 +69,7 @@
                   </a>
               {/if}
           </div>
-          <div class="col-md-10 col-sm-12 position-static d-flex align-items-center justify-content-center">
+          <div class="col-md-10 col-sm-12 position-static d-flex align-items-center">
             {hook h='displaySearch'}
             <div class="clearfix"></div>
           </div>

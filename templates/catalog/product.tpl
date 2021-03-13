@@ -100,7 +100,7 @@
                 {/if}
               {/block}
 
-              {if isset($product_manufacturer->id)}
+              {*{if isset($product_manufacturer->id)}
                 <div class="product-manufacturer">
                   {if isset($manufacturer_image_url)}
                     <a href="{$product_brand_url}">
@@ -114,9 +114,9 @@
                     </span>
                   {/if}
                 </div>
-              {/if}
+              {/if}*}
 
-              <div id="product-rating">
+              {*<div id="product-rating">
                 <div class="row p-2">
                   <div class="col-6">
                     <p>{l s='Hodnotenie:' d='Shop.Theme.Catalog'}</p>
@@ -126,7 +126,7 @@
                     <span><i class="fas fa-heart"></i> 312</span>
                   </div>
                 </div>
-              </div>
+              </div>*}
 
               {if $product.is_customizable && count($product.customizations.fields)}
                 {block name='product_customization'}
@@ -199,7 +199,37 @@
                     </a>
                 </div>
                 <div id="carier-payment" class="card-body collapse" data-parent="#accordion">
-                    <p>Doprava a platba</p>
+                    <p>Spôsob dopravy</p>
+                    <div class="row m-0">
+                      <div class="col-6 col-sm-4 text-center">
+                        <img width="150" src="https://gsmplus.sk/img/s/8.jpg" alt="">
+                        <br>
+                        <p class="mt-2">Zásielkovňa</p>
+                        <p>Cena: 2.50€</p>
+                      </div>
+                      <div class="col-6 col-sm-4 text-center">
+                        <img width="150" src="https://gsmplus.sk/img/s/9.jpg" alt="">
+                        <br>
+                        <p class="mt-2">123 kuriér</p>
+                        <p>Cena: 3.90€</p>
+                      </div>
+                      <div class="col-6 col-sm-4 text-center">
+                        <img width="150" src="https://gsmplus.sk/img/s/10.jpg" alt="">
+                        <br>
+                        <p class="mt-2">Osobný odber</p>
+                        <p>Cena: zadarmo</p>
+                      </div>
+                    </div>
+                    <p>Spôsob platby</p>
+                    <div class="row m-0">
+                      <div class="col-6 col-sm-4 text-center">
+                        <img width="150" src="https://gsmplus.sk/themes/markas/assets/img/footer/karty.png" alt="">
+                      </div>
+                      <div class="col-6 col-sm-4 text-center">
+                        <p>Bankovým prevodom</p>
+                      </div>
+                    </div>
+                    <!-- <p><iframe width="100%" style="border: none;" src="https://gsmplus.sk/dopravaSK.php"></iframe></p> -->
                 </div>
                 <div class="card-header mt-2 collapsed" data-toggle="collapse" data-parent="#accordion" href="#product-info">
                     <a class="card-title">
@@ -209,7 +239,7 @@
                 <div id="product-info" class="collapse" data-parent="#accordion" >
                     <div class="card-body">
                     {block name='product_reference'}
-                      {if isset($product_manufacturer->id)}
+                      {*{if isset($product_manufacturer->id)}
                         <div class="product-manufacturer mb-2">
                           {if isset($manufacturer_image_url)}
                             <a href="{$product_brand_url}">
@@ -224,11 +254,14 @@
                             </span>
                           {/if}
                         </div>
-                      {/if}
+                      {/if}*}
                       {if isset($product.reference_to_display) && $product.reference_to_display neq ''}
                         <div class="product-reference">
                           <label class="label">{l s='Reference' d='Shop.Theme.Catalog'}: </label>
                           <span itemprop="sku">{$product.reference_to_display}</span>
+                          <br>
+                          <label class="label">{l s='EAN' d='Shop.Theme.Catalog'}: </label>
+                          <span itemprop="ean">{$product.ean13}</span>
                         </div>
                       {/if}
                     {/block}
@@ -304,12 +337,10 @@
         </div>
       </div>
       {/block}
-    </div>
-
-    {block name='product_accessories'}
+      {block name='product_accessories'}
       {if $accessories}
-        <section class="product-accessories clearfix">
-          <p class="h5 text-uppercase">{l s='You might also like' d='Shop.Theme.Catalog'}</p>
+        <section class="product-accessories clearfix mt-3">
+          <p class="h5 text-uppercase text-center">{l s='You might also like' d='Shop.Theme.Catalog'}</p>
           <div class="products" itemscope itemtype="http://schema.org/ItemList">
             {foreach from=$accessories item="product_accessory" key="position"}
               {block name='product_miniature'}
@@ -320,6 +351,7 @@
         </section>
       {/if}
     {/block}
+    </div>
 
     {block name='product_footer'}
       {hook h='displayFooterProduct' product=$product category=$category}

@@ -32,25 +32,17 @@
     <div id="subcategories">
       <div class="clearfix podkategorie rozcestnik-img-wrapper justify-content-md-center">
         {foreach from=$subcategories item=subcategory}
-        {if $subcategory.id_image == "sk-default"}
-        <div class="col-rozcestnik rozcestnik">
-          <a href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'html':'UTF-8'}" title="{$subcategory.name|escape:'html':'UTF-8'}" class="img without-img">
-            <div class="row">
-              <div class="col-12" style="padding: 0; display: flex; align-items: center; justify-content: center; text-align: center;">
-                <h5>
-                  {$subcategory.name|truncate:50:'...'|escape:'html':'UTF-8'}
-                </h5>
-              </div>
-            </div>
-          </a>
-        </div>
-        {else}
+        
         <div class="col-rozcestnik rozcestnik">
           <a href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'html':'UTF-8'}" title="{$subcategory.name|escape:'html':'UTF-8'}" class="img">
             <div class="row">
               <div class="col-6" style="padding: 0 5px;">
                 <div class="subcategory-image">
+                  {if $subcategory.id_image == "sk-default"}
+                  <img src="{$shop.logo}" alt="{$subcategory.name|escape:'html':'UTF-8'}" />
+                  {else}
                   <img src="{$link->getCatImageLink($subcategory.link_rewrite, $subcategory.id_image, 'category_default')|escape:'html':'UTF-8'}" alt="{$subcategory.name|escape:'html':'UTF-8'}" />
+                  {/if}
                 </div>
               </div>  
               <div class="col-6" style="padding: 0; display: flex; align-items: center;">
@@ -61,10 +53,10 @@
             </div>
           </a>
         </div>
-        {/if}
         {/foreach}
       </div>
     </div>
     {/if}
   {/if}
+{hook h="displayLeftColumn"}
 {/block}

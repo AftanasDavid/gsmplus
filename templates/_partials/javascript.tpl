@@ -22,6 +22,10 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
+
+<!-- Jquery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
 {foreach $javascript.external as $js}
   <script type="text/javascript" src="{$js.uri}" {$js.attribute}></script>
 {/foreach}
@@ -42,9 +46,6 @@
 
 <!-- FontAwesome -->
 <script src="https://kit.fontawesome.com/df8509d0ba.js"></script>
-
-<!-- Jquery -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
 <!-- Carousel script -->
 <script src="https://gsmplus.sk/themes/markas/assets/js/owl.carousel.min.js"></script>

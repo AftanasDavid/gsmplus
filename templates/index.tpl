@@ -33,22 +33,46 @@
           <div id="carousel-brands">
             <div class="owl-carousel">
               <div>
-                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/sample.png" alt="Partneri" /></a>
+                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/znacky/awei.png" alt="awei" /></a>
               </div>
               <div>
-                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/sample.png" alt="Partneri" /></a>
+                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/znacky/baseus.png" alt="baseus" /></a>
               </div>
               <div>
-                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/sample.png" alt="Partneri" /></a>
+                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/znacky/esr.png" alt="esr" /></a>
               </div>
               <div>
-                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/sample.png" alt="Partneri" /></a>
+                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/znacky/goospery.png" alt="goospery" /></a>
               </div>
               <div>
-                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/sample.png" alt="Partneri" /></a>
+                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/znacky/hoco.png" alt="hoco" /></a>
               </div>
               <div>
-                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/sample.png" alt="Partneri" /></a>
+                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/znacky/iDeal.png" alt="iDeal" /></a>
+              </div>
+              <div>
+                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/znacky/Monkey.png" alt="Monkey" /></a>
+              </div>
+              <div>
+                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/znacky/otterbox.png" alt="otterbox" /></a>
+              </div>
+              <div>
+                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/znacky/remax.png" alt="remax" /></a>
+              </div>
+              <div>
+                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/znacky/roar.png" alt="roar" /></a>
+              </div>
+              <div>
+                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/znacky/spigen.png" alt="spigen" /></a>
+              </div>
+              <div>
+                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/znacky/UAG.png" alt="UAG" /></a>
+              </div>
+              <div>
+                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/znacky/UiiSii.png" alt="UiiSii" /></a>
+              </div>
+              <div>
+                  <a href="#" target="_blank" title="" itemprop="url"><img src="https://gsmplus.sk/themes/markas/assets/img/znacky/x-one.png" alt="x-one" /></a>
               </div>
             </div>
           </div>

@@ -29,6 +29,7 @@
     <article class="product-miniature js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemprop="item" itemscope itemtype="http://schema.org/Product">
       <div class="row m-0">
         <div class="col-12 text-center p-0">
+          {include file='catalog/_partials/product-flags.tpl'}
           {if $product.cover}
             <a href="{$product.url}" class="thumbnail product-thumbnail">
               <img
@@ -80,6 +81,7 @@
                 {hook h='displayProductPriceBlock' product=$product type='unit_price'}
 
                 {hook h='displayProductPriceBlock' product=$product type='weight'}
+
               </div>
             {/if}
           {/block}
